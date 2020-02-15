@@ -1,16 +1,21 @@
 package com.surajgautam.datastructures.and.algorithms.linkedlist;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SinglyLinkedList<T> implements LinkedList<T> {
 
     private Node<T> head;
     private Node<T> tail;
+    private int size;
 
     /*
         Time Complexity of O(1)
      */
     @Override
     public void add(T value){
+        size++;
         Node<T> node;
         if(this.head == null){
             node = new Node<>(value, null);
@@ -28,20 +33,22 @@ public class SinglyLinkedList<T> implements LinkedList<T> {
     */
    @Override
    public void addToHead(T value){
+       size++;
        this.head = new Node<>(value, this.head);
     }
 
     @Override
     public void addToPosition(int position, T value) {
        if(position == 1 && this.head == null){
-           addToHead(value);
+           add(value);
        }else{
            Node<T> node = this.head;
            int counter = 1;
            while(node!=null){
-               if(counter == position){
-                   addToHead(value);
-                   break;
+               if(counter == position-1){
+                   size++;
+                   Node<T> newNode = new Node<>(value, node.getNext());
+                   node.setNext(newNode);
                }
                counter++;
                node = node.getNext();
@@ -57,6 +64,7 @@ public class SinglyLinkedList<T> implements LinkedList<T> {
      */
     @Override
     public void delete(){
+        size--;
         Node<T> node = this.head;
         while(node!=null){
             if(node.getNext() == this.tail){
@@ -72,6 +80,7 @@ public class SinglyLinkedList<T> implements LinkedList<T> {
      */
     @Override
     public void deleteHead(){
+        size--;
         Node nextNode = this.head.getNext();
         this.head.setNext(null);
         this.head = nextNode;
@@ -85,17 +94,28 @@ public class SinglyLinkedList<T> implements LinkedList<T> {
             Node<T> node = this.head;
             int counter = 1;
             while(node!=null){
-                if(counter == position){
-                    deleteHead();
+                if(counter == position-1){
+                    node.setNext(node.getNext().getNext());
                     break;
                 }
                 counter++;
                 node = node.getNext();
             }
-            if(position > counter){
-                throw new RuntimeException("The position is out of bound");
+        }
+        size--;
+    }
+
+    @Override
+    public List<T> getAllValues() {
+        List<T> values = new ArrayList<>();
+        if(this.head != null) {
+            Node<T> node = this.head;
+            while (node != null) {
+                values.add(node.getValue());
+                node = node.getNext();
             }
         }
+        return values;
     }
 
     /*
@@ -111,6 +131,11 @@ public class SinglyLinkedList<T> implements LinkedList<T> {
             System.out.println(node.getValue());
             node = node.getNext();
         }
+    }
+
+    @Override
+    public int size() {
+        return this.size;
     }
 
 }
