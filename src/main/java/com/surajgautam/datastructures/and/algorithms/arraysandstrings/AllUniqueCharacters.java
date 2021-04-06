@@ -14,6 +14,9 @@ public class AllUniqueCharacters {
         return isUnique;
     }
 
+    /*
+    O(N) time complexity
+     */
     public boolean isUniqueBruteForce(String value) {
         char[] items = value.toCharArray();
         boolean isUnique = true;
