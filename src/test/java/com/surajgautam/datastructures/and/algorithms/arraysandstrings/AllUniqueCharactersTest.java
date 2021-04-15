@@ -15,10 +15,18 @@ class AllUniqueCharactersTest {
     }
 
     @Test
-    void isUnique(){
-        assertTrue(this.characters.isUniqueBruteForce("table"));
-        assertFalse(this.characters.isUniqueBruteForce("taable"));
-        assertTrue(this.characters.isUniqueBruteForce("t"));
-        assertTrue(this.characters.isUniqueBruteForce(""));
+    void isUniqueUsingSet(){
+        assertTrue(this.characters.isUniqueUsingSet("table"));
+        assertFalse(this.characters.isUniqueUsingSet("taable"));
+        assertTrue(this.characters.isUniqueUsingSet("t"));
+        assertTrue(this.characters.isUniqueUsingSet(""));
+    }
+
+    @Test
+    void isUniqueUsingBooleanArrays(){
+        assertTrue(this.characters.isUniqueUsingBooleanArrays("table"));
+        assertFalse(this.characters.isUniqueUsingBooleanArrays("taable"));
+        assertTrue(this.characters.isUniqueUsingBooleanArrays("t"));
+        assertTrue(this.characters.isUniqueUsingBooleanArrays(""));
     }
 }
