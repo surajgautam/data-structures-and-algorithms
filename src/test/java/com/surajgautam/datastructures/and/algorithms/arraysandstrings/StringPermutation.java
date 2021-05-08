@@ -16,13 +16,13 @@ public class StringPermutation {
         if (firstValue.length() != secondValue.length()) {
             return false;
         }
-        char[] firstValueChars = firstValue.toCharArray();
-        char[] secondValueChars = secondValue.toCharArray();
+        return getSortedValue(firstValue).equals(getSortedValue(secondValue));
+    }
 
-        Arrays.sort(firstValueChars);
-        Arrays.sort(secondValueChars);
-
-        return new String(firstValueChars).equals(new String(secondValueChars));
+    public String getSortedValue(String value) {
+        char[] values = value.toCharArray();
+        Arrays.sort(values); // O (n log n)
+        return new String(values);
     }
 
 }
