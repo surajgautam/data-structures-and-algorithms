@@ -19,6 +19,9 @@ class StringPermutationTest {
     void isPermutationTrue() {
         assertTrue(stringPermutation.isPermutation("test", "estt"));
         assertTrue(stringPermutation.isPermutation("God", "doG"));
+
+        assertTrue(stringPermutation.isPermutationUsingArrays("test", "estt"));
+        assertTrue(stringPermutation.isPermutationUsingArrays("God", "doG"));
     }
 
     @Test
@@ -26,6 +29,10 @@ class StringPermutationTest {
         assertFalse(stringPermutation.isPermutation(null, "estt"));
         assertFalse(stringPermutation.isPermutation("God", null));
         assertFalse(stringPermutation.isPermutation("test", "tests"));
+
+        assertFalse(stringPermutation.isPermutationUsingArrays(null, "estt"));
+        assertFalse(stringPermutation.isPermutationUsingArrays("God", null));
+        assertFalse(stringPermutation.isPermutationUsingArrays("test", "tests"));
     }
 
 
