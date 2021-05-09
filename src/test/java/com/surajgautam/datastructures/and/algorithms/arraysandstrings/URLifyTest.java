@@ -20,5 +20,6 @@ class URLifyTest {
         final String encodedValue = "Mr%20John%20Smith";
         final String input = "Mr John Smith    ";
         assertEquals(encodedValue, urLify.encode(input, 13));
+        assertEquals(encodedValue, new String(urLify.encode(input.toCharArray(), 13)));
     }
 }
