@@ -14,13 +14,30 @@ public class PalindromePermutation {
         return checkMaximumOneOdd(table);
     }
 
+    boolean isPermutationOfPalindromeUsingBits(String value) {
+        //toggle the bits for each characters. For example: T will be 1 first, if it is found again it will be 0 and so on.
+        //In the end, if we have only one bit as 1, then it's a palindrome.
+        //Think carefully
+        int bitVector = 0;
+        for (char character : value.toCharArray()) {
+            int val = Character.getNumericValue(character);
+            if (val < 0) { //skip special characters
+                continue;
+            }
+            bitVector = bitVector ^ (1 << val); //flip bit. It will be 1 at first and 0 if repeated
+        }
+        //if subtracted from 1 and AND operation is applied, we can find if there is only
+        // one 1 bit
+        return ((bitVector & (bitVector - 1)) == 0);
+    }
+
     private boolean checkMaximumOneOdd(int[] table) {
         int oddCount = 0;
         for (int count : table) {
             if (count % 2 != 0) {
                 oddCount++;
             }
-            if(oddCount > 1) {
+            if (oddCount > 1) {
                 return false;
             }
         }

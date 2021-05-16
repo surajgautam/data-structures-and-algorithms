@@ -20,8 +20,14 @@ class PalindromePermutationTest {
         assertTrue(this.palindromePermutation.isPermutationOfPalindrome("Tact Coa"));
         assertTrue(this.palindromePermutation.isPermutationOfPalindrome("abba"));
         assertTrue(this.palindromePermutation.isPermutationOfPalindrome("racecar"));
-
-        //todo add validations and test cases
         assertFalse(this.palindromePermutation.isPermutationOfPalindrome("test"));
+    }
+
+    @Test
+    void testPalindromePermutationUsingBits() {
+        assertTrue(this.palindromePermutation.isPermutationOfPalindromeUsingBits("Tact Coa"));
+        assertTrue(this.palindromePermutation.isPermutationOfPalindromeUsingBits("abba"));
+        assertTrue(this.palindromePermutation.isPermutationOfPalindromeUsingBits("racecar"));
+        assertFalse(this.palindromePermutation.isPermutationOfPalindromeUsingBits("test"));
     }
 }
