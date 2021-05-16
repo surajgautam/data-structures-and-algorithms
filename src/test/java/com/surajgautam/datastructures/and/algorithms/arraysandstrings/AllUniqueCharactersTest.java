@@ -15,7 +15,7 @@ class AllUniqueCharactersTest {
     }
 
     @Test
-    void isUniqueUsingSet(){
+    void isUniqueUsingSet() {
         assertTrue(this.characters.isUniqueUsingSet("table"));
         assertFalse(this.characters.isUniqueUsingSet("taable"));
         assertTrue(this.characters.isUniqueUsingSet("t"));
@@ -23,10 +23,19 @@ class AllUniqueCharactersTest {
     }
 
     @Test
-    void isUniqueUsingBooleanArrays(){
+    void isUniqueUsingBooleanArrays() {
         assertTrue(this.characters.isUniqueUsingBooleanArrays("table"));
         assertFalse(this.characters.isUniqueUsingBooleanArrays("taable"));
         assertTrue(this.characters.isUniqueUsingBooleanArrays("t"));
         assertTrue(this.characters.isUniqueUsingBooleanArrays(""));
+    }
+
+    @Test
+    void isUniqueUsingBits() {
+        assertTrue(this.characters.isUniqueUsingBits("table"));
+        assertFalse(this.characters.isUniqueUsingBits("taable"));
+        assertTrue(this.characters.isUniqueUsingBits("t"));
+        assertTrue(this.characters.isUniqueUsingBits(""));
+        assertFalse(this.characters.isUniqueUsingBits("test"));
     }
 }

@@ -44,4 +44,16 @@ public class AllUniqueCharacters {
         return true;
     }
 
+    public boolean isUniqueUsingBits(String text) {
+        int checker = 0;
+        for (int i = 0; i < text.length(); i++) {
+            int value = text.charAt(i) - 'a';
+            if ((checker & (1 << value)) > 0) {
+                return false;
+            }
+            checker = checker | (1 << value);
+        }
+        return true;
+    }
+
 }
