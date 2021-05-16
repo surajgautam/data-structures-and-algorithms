@@ -20,7 +20,7 @@ public class PalindromePermutation {
         //Think carefully
         int bitVector = 0;
         for (char character : value.toCharArray()) {
-            int val = Character.getNumericValue(character);
+            int val = Character.getNumericValue(character); //case insensitive
             if (val < 0) { //skip special characters
                 continue;
             }
