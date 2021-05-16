@@ -27,7 +27,7 @@ public class PalindromePermutation {
             bitVector = bitVector ^ (1 << val); //flip bit. It will be 1 at first and 0 if repeated
         }
         //if subtracted from 1 and AND operation is applied, we can find if there is only
-        // one 1 bit
+        // one 1 bit for example, 00001000
         return ((bitVector & (bitVector - 1)) == 0);
     }
 
