@@ -1,0 +1,16 @@
+version: 2.1
+
+jobs:
+  maven_test:
+    docker:
+      - image: circleci/openjdk:8-jdk
+    steps:
+      - run: mvn test
+
+workflows:
+  test:
+    jobs:
+      - maven_test:
+          filters:
+            brances:
+              only: master
