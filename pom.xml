@@ -7,6 +7,9 @@
     <groupId>org.example</groupId>
     <artifactId>data-structures-and-algorithms</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <properties>
+        <maven-surefire>3.0.0-M5</maven-surefire>
+    </properties>
     <build>
         <plugins>
             <plugin>
@@ -16,6 +19,11 @@
                     <source>8</source>
                     <target>8</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire}</version>
             </plugin>
         </plugins>
     </build>
