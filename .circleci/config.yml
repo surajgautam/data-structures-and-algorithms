@@ -4,8 +4,11 @@ jobs:
   maven_test:
     docker:
       - image: circleci/openjdk:8-jdk
+    working_directory: ~/data-structures-and-algorithms
     steps:
+      - checkout #checkout the source code to working directory
       - run: mvn test
+
 
 workflows:
   test:
