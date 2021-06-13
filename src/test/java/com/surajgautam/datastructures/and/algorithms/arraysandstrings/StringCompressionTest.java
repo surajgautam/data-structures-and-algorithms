@@ -16,7 +16,7 @@ public class StringCompressionTest {
 
     @Test
     void canCompressString() {
-        assertEquals(this.stringCompression.compress("aabcccccddd"), "a2b1c5d3");
-        assertEquals(this.stringCompression.compress("ab"), "ab");
+        assertEquals("a2b1c5a3", this.stringCompression.compress("aabcccccaaa"));
+        assertEquals("ab", this.stringCompression.compress("ab"));
     }
 }
