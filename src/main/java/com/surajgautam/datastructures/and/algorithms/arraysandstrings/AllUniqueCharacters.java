@@ -48,10 +48,10 @@ public class AllUniqueCharacters {
         int checker = 0;
         for (int i = 0; i < text.length(); i++) {
             int value = text.charAt(i) - 'a';
-            if ((checker & (1 << value)) > 0) {
+            if ((checker & (1 << value)) > 0) { //get bit
                 return false;
             }
-            checker = checker | (1 << value);
+            checker = checker | (1 << value); //set bit to 1
         }
         return true;
     }
