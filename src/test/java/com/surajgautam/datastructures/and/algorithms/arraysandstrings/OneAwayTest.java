@@ -15,7 +15,12 @@ class OneAwayTest {
     }
 
     @Test
-    void isOneEditAway() {
-        assertTrue(this.oneAway.isOneEditAway("pale", "ple"));
+    void isOneEditAwayFirstSolution() {
+        assertTrue(this.oneAway.isOneEditAwayFirstSolution("pale", "ple"));
+        assertTrue(this.oneAway.isOneEditAwayFirstSolution("pales", "pale"));
+        assertTrue(this.oneAway.isOneEditAwayFirstSolution("pale", "bale"));
+        assertTrue(this.oneAway.isOneEditAwayFirstSolution("applz", "apple"));
+
+        assertFalse(this.oneAway.isOneEditAwayFirstSolution("pale", "bae"));
     }
 }
