@@ -19,4 +19,10 @@ public class StringCompressionTest {
         assertEquals("a2b1c5a3", this.stringCompression.compress("aabcccccaaa"));
         assertEquals("ab", this.stringCompression.compress("ab"));
     }
+
+    @Test
+    void canCompressUsingSecondApproach() {
+        assertEquals("a2b1c5a3", this.stringCompression.preDefinedStringBuilderCompress("aabcccccaaa"));
+        assertEquals("ab", this.stringCompression.preDefinedStringBuilderCompress("ab"));
+    }
 }
