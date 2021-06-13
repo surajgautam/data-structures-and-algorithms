@@ -12,5 +12,5 @@ workflows:
     jobs:
       - maven_test:
           filters:
-            brances:
+            branches:
               only: master
